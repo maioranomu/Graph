@@ -12,10 +12,9 @@ def clear():
 def add_graph():
     global graph_dict
     name = input("Add graph name: ")
-    # print(graph_dict)
     while True:
         try:
-            value = int(input("Add graph value: "))
+            value = float(input("Add graph value: "))
             break
         except ValueError:
             print("Invalid input, please enter a number.")
@@ -39,18 +38,32 @@ def show_graph():
     space_nums = " " * (max(namevalue) - 1)
     space = " " * (max(namevalue) + 1)
     graphnumber = ""
+    marker = ""
     
-    for number in range(maxgraph + 1):
-        graphnumber += str(number) + "  "
-    
+    for number in range(int(maxgraph + 2)):
+        
+        if len(str(number)) == 1:
+            graphnumber += str(number) + "   "
+        elif len(str(number)) == 2:
+            graphnumber += str(number) + "  "
+        elif len(str(number)) == 3:
+            graphnumber += str(number) + " "
+        else:
+            graphnumber += str(number)   
+        
+    for number in range(int(maxgraph + 2)):
+        marker += "|" + "   "
+        
     clear()
     print(f"{space_nums} {graphnumber}")
+    print(f"{space_nums} {marker}")
     for graph in graph_dict:
+        each = graph_dict[graph][1] / 0.25
         print("\n")
         spacename = " " * ((max(namevalue) - len(graph_dict[graph][0])) + 1)
-        print(space + ("#" * graph_dict[graph][1] * 3))
-        print(graph_dict[graph][0] + spacename + ("#" * graph_dict[graph][1] * 3))
-        print(space + ("#" * graph_dict[graph][1] * 3))
+        print(space + ("#" * int(each)))
+        print(graph_dict[graph][0] + spacename + ("#" * int(each)) , str(graph_dict[graph][1]))
+        print(space + ("#" * int(each)))
         
 while True:
     clear()
