@@ -2,9 +2,9 @@ import os
 
 graph_dict = {}
 
-for i in range(15):
-    i += 1
-    graph_dict[i] = str(i), float(i)
+# for i in range(15):
+#     i += 1
+#     graph_dict[i] = str(i), float(i)
 
 def clear():
     os.system("cls")
@@ -21,7 +21,6 @@ def add_graph():
             
     graph_dict[len(graph_dict) + 1] = [name, value]
      
-
 def show_graph():
     namelist = []
     namevalue = []
@@ -67,8 +66,7 @@ def show_graph():
         
 while True:
     clear()
+    add_graph()
     show_graph()
     input("")
     clear()
-    add_graph()
-    input("")
