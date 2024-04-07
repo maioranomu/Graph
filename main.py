@@ -2,9 +2,9 @@ import os
 
 graph_dict = {}
 
-for i in range(5):
-    i += 20
-    graph_dict[i] = str(i), i
+# for i in range(10):
+#     i += 1
+#     graph_dict[i] = str(i) + "A", i
 
 def clear():
     os.system("cls")
@@ -27,11 +27,9 @@ def show_graph():
     namelist = []
     namevalue = []
     graphvalue = []
-    
-    for graph in graph_dict:
-        namelist.append(graph_dict[graph][0])
         
     for graph in graph_dict:
+        namelist.append(graph_dict[graph][0])
         graphvalue.append(graph_dict[graph][1])
         maxgraph = max(graphvalue)
         
@@ -40,8 +38,8 @@ def show_graph():
         
     space_nums = " " * (max(namevalue) - 1)
     space = " " * (max(namevalue) + 1)
-    
     graphnumber = ""
+    
     for number in range(maxgraph + 1):
         graphnumber += str(number) + "  "
     
@@ -56,6 +54,6 @@ def show_graph():
         
 while True:
     clear()
-    # add_graph()
+    add_graph()
     show_graph()
     input("")
