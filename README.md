@@ -1,1 +1,1 @@
-Its just a test code, which i created to test my habilities, it doesnt work when the number is past 2 digits, it starts deforming the graph, as the code doesnt have a support for the extra digit and im too lazy to fix it.
+Works just fine i think
